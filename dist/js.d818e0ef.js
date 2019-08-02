@@ -117,9 +117,38 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/js/index.js":[function(require,module,exports) {
-console.log('hey');
-},{}],"../../../AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})({"src/js/Count.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var count = function count(a, b) {
+  return a + b;
+};
+
+var _default = count;
+exports.default = _default;
+},{}],"src/js/index.js":[function(require,module,exports) {
+"use strict";
+
+var _Count = _interopRequireDefault(require("./Count"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+console.log('from index.js');
+
+function handleClick() {
+  alert('clicked');
+  var x = (0, _Count.default)(3, 15);
+  console.log('x:' + x);
+}
+
+var btn1 = document.querySelector('#btn1');
+btn1.addEventListener('click', handleClick);
+},{"./Count":"src/js/Count.js"}],"../../../AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -147,7 +176,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55661" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56198" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
