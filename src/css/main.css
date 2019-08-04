@@ -20,7 +20,7 @@ h1 {
   border: 1px solid black;
   height: 320px;
   text-align: center;
-  margin: auto;
+  vertical-align: 20%;
 }
 
 /* Applies to the element with <... id="someid"> specified. */
